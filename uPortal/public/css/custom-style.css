@@ -1,3 +1,7 @@
+
+#container{
+        background-color: #F5F5F5;
+}
 .nav-bg {
         background-color: #1C2331 !important;
 }
@@ -5,8 +9,33 @@
         font-family: 'Noto Sans KR', sans-serif;
 }
 .nav-link {
-        font-family: 'Noto Sans KR', sans-serif;
-}
-.nav-item{
+       font-weight:500;
        
+}
+.dropdown-bg{
+       background-color: #1C2331 !important;
+       
+}
+.dropdown .dropdown-item{
+        color:white !important;
+}
+
+.dropdown .dropdown-item:hover{
+        color:  #1C2331 !important;
+}
+.card{
+        background-color: transparent;
+}
+
+.dash-bg{
+        background-color: white ;
+}
+.list-group-item{
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: bold;
+        font-size:13px;
+}
+.list-group-item:hover{
+            background-color: #1C2331 !important;
+            color:white !important;
 }
