@@ -12,12 +12,26 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="surname" type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" value="{{ old('surname') }}" autofocus>
 
-                                @error('name')
+                                @error('surname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="middlename" class="col-md-4 col-form-label text-md-right">{{ __('Middle Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="middlename" type="text" class="form-control @error('middlename') is-invalid @enderror" name="middlename" value="{{ old('middlename') }}" required  autofocus>
+
+                                @error('middlename')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,6 +39,63 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required  autofocus>
+
+                                @error('firstname')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="department" class="col-md-4 col-form-label text-md-right">{{ __('Department') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="department" type="text" class="form-control @error('department') is-invalid @enderror" name="department" value="{{ old('department') }}" required autofocus>
+
+                                @error('department')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="faculty" class="col-md-4 col-form-label text-md-right">{{ __('Faculty') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="faculty" type="text" class="form-control @error('faculty') is-invalid @enderror" name="faculty" value="{{ old('faculty') }}" required autofocus>
+
+                                @error('faculty')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('Level') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="level" type="text" class="form-control @error('level') is-invalid @enderror" name="level" value="{{ old('level') }}" required autofocus>
+
+                                @error('level')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                    
                         <div class="form-group row">
                             <label for="matno" class="col-md-4 col-form-label text-md-right">{{ __('matno') }}</label>
 

@@ -10,7 +10,7 @@
                     <div class="card-body">
                     <img src="{{asset('images/avater.png')}}" class="mx-auto d-block" alt="Profile Image" width="130px" height ="130px">
                     
-                        <h3 class="font-weight-bold text-center mt-3 mb-0">{{ Auth::user()->name}}</h3>
+                        <h3 class="font-weight-bold text-center mt-3 mb-0">{{ $auth->surname}}, {{ Auth::user()->middlename}} {{ Auth::user()->firstname}}</h3>
                         <p class="text-center">{{'Mat No: '}} {{Auth::user()->matno}}</p>
 
 
@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="list-group list-group-flush">
-                    <a href="{{''}}" class="list-group-item list-group-item-action">
+                    <a href="{{route('mydata', 'mydata')}}" class="list-group-item list-group-item-action">
                         <i class="fas fa-user-graduate"></i>  
                          &nbsp;&nbsp;{{__('  My Data')}}
                     </a>
@@ -36,6 +36,19 @@
                         &nbsp;&nbsp;{{__('  Logout')}}
                     </a>
                 </div>
+
+            </div>
+
+            <div class="col-md-9 dash-bg dash-content">
+                <div class="dash-content-backlink-border">
+                    <span>
+                        <a href ="{{route('home')}} backlink-item">HOME</a> \
+                        <a href ="{{''}} backlink-item">STUDENTS</a> \
+                        <a href ="{{route('home')}} backlink-item">{{Auth::user()->matno}}</a>   
+                    </span>
+                </div>
+
+                @yield('dashcontent')
 
             </div>
         </div>
