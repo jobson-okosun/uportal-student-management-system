@@ -15,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@userlogin')->name('user_login');
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{mydata}', 'HomeController@retrieve')->name('mydata');
+
+
+
+
+   

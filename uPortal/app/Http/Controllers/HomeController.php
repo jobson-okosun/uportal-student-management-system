@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Providers;
 
 class HomeController extends Controller
 {   
@@ -27,4 +28,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function retrieve($mydata){
+        
+        
+        return view('personal_record');
+    }
+
 }
