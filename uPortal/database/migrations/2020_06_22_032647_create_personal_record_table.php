@@ -18,8 +18,8 @@ class CreatePersonalRecordTable extends Migration
             $table->string('address');
             $table->string('religion');
             $table->string('phone');
-            $table->string('maritalStaus');
-            $table->string('nextOfKin');
+            $table->string('maritalstatus');
+            $table->string('nextofKin');
             $table->timestamps();
         });
     }

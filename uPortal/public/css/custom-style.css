@@ -87,3 +87,7 @@
     .table .ml{
         padding-left:50px;
     }
+    ::placeholder{
+         text-align:left;
+         
+    }

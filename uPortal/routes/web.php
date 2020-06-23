@@ -20,6 +20,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/{mydata}', 'HomeController@retrieve')->name('mydata');
+Route::get('/home/{mydata}/{create_personal_details}', 'HomeController@makedata')->name('create_personal_details');
+
+Route::get('/home/{mydata}/{create_personal_details}/{update}', 'HomeController@editdata')->name('edit_personal_details');
+
+Route::post('/home/{mydata}', 'HomeController@createdata')->name('createdata');
+
 
 
 
