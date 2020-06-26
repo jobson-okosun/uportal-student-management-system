@@ -18,13 +18,14 @@ Route::get('/', 'HomeController@userlogin')->name('user_login');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/home/{mydata}', 'HomeController@retrieve')->name('mydata');
-Route::get('/home/{mydata}/{create_personal_details}', 'HomeController@makedata')->name('create_personal_details');
+Route::get('/home/mydata', 'HomeController@retrieve')->name('home')->middleware('auth');
+Route::get('/home/mydata/{create_personal_details}', 'HomeController@makedata')->name('create_personal_details')->middleware('auth');
 
-Route::get('/home/{mydata}/{create_personal_details}/{update}', 'HomeController@editdata')->name('edit_personal_details');
+Route::get('/home/mydata/create_details/update', 'HomeController@editdata')->name('editdetails')->middleware('auth');
 
-Route::post('/home/{mydata}', 'HomeController@createdata')->name('createdata');
+Route::post('/home/mydata/create_details/update', 'HomeController@updatedata')->name('updatedetails')->middleware('auth');
+
+Route::post('/home/mydata', 'HomeController@createdata')->name('createdata')->middleware('auth');
 
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Providers;
 use App\personalRecord;
+use Auth;
 class HomeController extends Controller
 {   
 
@@ -29,23 +30,23 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function retrieve($mydata){
+    public function retrieve(){
   
         return view('personal_record');
     }
 
-    public function makedata($mydata, $create_personal_details){
+    public function makedata(){
    
         return view('make_record');
     }
 
-    public function editdata($mydata, $edit_personal_details, $update){
+    public function editdata(){
 
-        
+
         return view('edit_record');
     }
 
-    public function createdata($mydata){
+    public function createdata(){
     $personalrecord = new personalRecord();
     $personalrecord->address = request('address');
     $personalrecord->religion = request('religion');
@@ -57,7 +58,25 @@ class HomeController extends Controller
     
     $personalrecord->save();
 
-    return redirect('/home/mydata');
+    return redirect()->route('mydata','mydata');
 
     }
+
+    public function updatedata(){
+
+    $personalrecord =  personalRecord::findOrFail(Auth::user()->id);
+    $personalrecord->address = request('address');
+    $personalrecord->religion = request('religion');
+    $personalrecord->phone = request('phone');
+    $personalrecord->maritalstatus = request('maritalstatus');
+    $personalrecord->nextofkin = request('nextofkin');
+
+    //error_log($personalrecord);
+    
+    $personalrecord->save();
+
+    return redirect('/home/mydata/create_details/update')->with('updatesuccess','Record updated');
+    }
+
+    
 }

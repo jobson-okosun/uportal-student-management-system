@@ -9,7 +9,14 @@
         <br>
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <form action = "{{route('createdata','mydata')}}" method ="POST">
+                @if(session()->has('updatesuccess'))
+                    <div class="alert alert-success">{{session('updatesuccess')}}</div>
+                @endif
+
+                <form action = "{{route('updatedetails')}}"
+
+
+                 method ="POST">
                     @csrf
                     <div class="form-group">
                         <label for="address">Permanent Address:</label>
@@ -17,14 +24,14 @@
                             placeholder ="@foreach($personal_record as $record)
                                 {{$record->address}}
                                 @endforeach"
-                                 name ="address"
+                                 name ="address" required
                         ></textarea>
                     </div>
                     
                     <div class="form-group">
                             <label for="religion">religion:</label>
                             <select name ="religion" class="custom-select">
-                                <option value="" disabled selected>
+                                <option value="" disabled selected required>
                                 @foreach($personal_record as $record)
                                 {{$record->religion}}
                                 @endforeach
@@ -41,12 +48,12 @@
                             placeholder ="@foreach($personal_record as $record)
                                 {{$record->phone}}
                                 @endforeach"
-                         name="phone"></textarea>
+                         name="phone" required></textarea>
                     </div>
                     <div class="form-group">
                             <label for="maritalstatus">Marital Status:</label>
                             <select name ="maritalstatus" class="custom-select">
-                                <option value="" disabled selected>
+                                <option value="" disabled selected required>
                                 @foreach($personal_record as $record)
                                 {{$record->maritalstatus}}
                                 @endforeach
@@ -63,7 +70,7 @@
                         <textarea class="form-control" rows="2" id="nextofkin"
                              placeholder ="@foreach($personal_record as $record)
                                 {{$record->nextofKin}}
-                                @endforeach"name="nextofkin">
+                                @endforeach"name="nextofkin" required>
                         </textarea>
                     </div>
 

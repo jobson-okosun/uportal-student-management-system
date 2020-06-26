@@ -1,5 +1,5 @@
 
-<nav class="navbar navbar-expand-md navbar-dark nav-bg shadow-sm">
+<nav class="navbar navbar-expand-md navbar-dark nav-bg shadow-md sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ 'uPORTAL' }}

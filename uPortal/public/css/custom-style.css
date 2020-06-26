@@ -1,9 +1,9 @@
-
 #container{
         background-color: #F5F5F5;
 }
 .nav-bg {
         background-color: #1C2331 !important;
+        padding:10px;
 }
 .navbar-brand {
         font-family: 'Noto Sans KR', sans-serif;
@@ -27,35 +27,54 @@
         background-color: transparent;
 }
 
+.card-body h4{
+        font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.responsive-info{
+        display:none;
+}
+
+.row-bg{
+        background-color: #fafafa  ;
+        
+}
+
 .dash-bg{
-        background-color: white ;
+        background-color: #eeeeee  ;
+         
        
 
 }
+
 .list-group-item{
         font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-weight: bold;
-        font-size:13px;
+        font-size:12px;
 }
 .list-group-item:hover{
             background-color: #1C2331 !important;
             color:white !important;
 }
+.list-active{
+        background-color: #1C2331;
+        color:white;
+}
 
 .dash-content{
          padding:0;
-         border-left:10px solid #F5F5F5;
+         
         
 }
 
 .dash-content-backlink-border{
         border-left:5px solid #1C2331; 
-        padding:5px 10px;
+        padding:3px 10px;
         background-color: #F5F5F5;
 }
 
-.dash-content-backlink-border .backlink-item{
-        font-size:15px;
+.dash-content-backlink-border span .backlink-item{
+        font-size:12px;
         
 }
 
@@ -69,25 +88,83 @@
         background-color: #1C2331;
         font-weight:400;
         color:white;
-        opacity:.7;
-        padding:10px;
+        opacity:.9;
+        padding:7px 10px;
         
 
     }
-    .view-title h3{
+    .view-title h5{
         margin:0;
     }
 
     .table{
-        font-size:14px;
+        font-size:12px;
+        margin-top:8px;
     }
-    .transform{
+    .transform{  
         text-transform: uppercase;
     }
     .table .ml{
         padding-left:50px;
     }
+    .edit-btn-wrap a{ 
+         float:center;
+    }
     ::placeholder{
          text-align:left;
          
+    }
+
+    .footer-wrap{
+        padding:10px;
+        text-align:right;
+        margin:0;
+        
+    }
+    .footer-bg{
+        background-color: #1C2331;
+        color:white;
+        width:100%;
+ 
+    }
+
+    @media (max-width: 576px){
+        .home-card-body{
+                display:none;
+        }
+        .dash-shadow{
+                box-shadow:none;
+        }
+        .profile{
+                margin:0;
+                padding:0;
+        }
+        .responsive-info{
+                display:block;
+                width:100%;
+                border:0;
+                border-radius:0;
+                background-color: #1C2331;
+                color:white;
+                text-align:left;
+                margin-bottom: 0;
+                outline:0;
+        }
+        .responsive-info:hover{
+                background-color: #1C2331;
+                color:white;
+        }
+        .info{
+                display:none;
+        }
+        .dash-content-backlink-border{
+                border-left:0;
+        }
+        .dash-content {
+                margin-top:0 !important;
+        }
+        .more{
+                margin:0;
+                padding:0;
+        }
     }

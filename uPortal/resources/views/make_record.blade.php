@@ -9,7 +9,7 @@
         <br>
         <div class="row">
             <div class="col-md-8 mx-auto">
-                <form action = "{{route('createdata','mydata')}}" method ="POSt">
+                <form action = "{{route('createdata')}}" method ="POSt">
                     @csrf
                     <div class="form-group">
                         <label for="address">Permanent Address:</label>

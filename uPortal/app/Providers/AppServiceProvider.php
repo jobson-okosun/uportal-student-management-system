@@ -5,6 +5,7 @@ use App\personalRecord;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,12 +32,15 @@ class AppServiceProvider extends ServiceProvider
         
         });
 
-        view::composer(['edit_record'], function($view){
+        view::composer(['edit_record','personal_record'], function($view){
 
             $personalrecord = personalRecord::where('id',Auth::user()->id)->get();
             $view->with('personal_record', $personalrecord);
 
         
         });
+
+        $date = carbon::now();
+        view::share('datetime', $date);
     }
 }
